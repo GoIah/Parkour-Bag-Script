@@ -1,0 +1,312 @@
+local BagFolder = Instance.new("Folder")
+BagFolder.Parent = workspace
+BagFolder.Name = "BagFolder"
+
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local BillboardGui = Instance.new("BillboardGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local UIGradient = Instance.new("UIGradient")
+local UIStroke = Instance.new("UIStroke")
+local Countofnumbers = Instance.new("NumberValue")
+local Rainbow = Instance.new("BoolValue")
+
+--Properties:
+
+BillboardGui.Parent = script
+BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+BillboardGui.Active = true
+BillboardGui.Enabled = false
+BillboardGui.LightInfluence = 1
+BillboardGui.AlwaysOnTop = true
+BillboardGui.Size = UDim2.new(0, 26, 0, 26)
+
+Frame.Parent = BillboardGui
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.Size = UDim2.new(1, 0, 1, 0)
+
+UICorner.CornerRadius = UDim.new(1, 0)
+UICorner.Parent = Frame
+
+UIStroke.Color = Color3.new(0,0,0)
+UIStroke.Enabled = false
+UIStroke.Thickness = 6.6
+UIStroke.Parent = Frame
+
+Rainbow.Value = false
+Rainbow.Name = "Rainbow"
+Rainbow.Parent = BillboardGui
+
+Countofnumbers.Name = "Countofnumbers"
+Countofnumbers.Parent = BillboardGui
+
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Selection = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Count = Instance.new("TextLabel")
+local BackArrow = Instance.new("TextButton")
+local Arrow = Instance.new("TextButton")
+local Distance = Instance.new("TextLabel")
+local Rarity = Instance.new("TextLabel")
+local UIStroke = Instance.new("UIStroke")
+
+--Properties:
+
+Selection.Name = "Selection"
+Selection.Parent = game.Teams
+Selection.ResetOnSpawn = false
+
+Frame.Parent = Selection
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.Position = UDim2.new(0.361134291, 0, 0.186257511, 0)
+Frame.Size = UDim2.new(0.266055048, 0, 0.0429082252, 0)
+
+Count.Name = "Count"
+Count.Parent = Frame
+Count.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Count.BorderSizePixel = 0
+Count.Position = UDim2.new(0.185823157, 0, -0.194444448, 0)
+Count.Size = UDim2.new(0.626959264, 0, 1.38888884, 0)
+Count.Font = Enum.Font.SourceSans
+Count.Text = "9999"
+Count.TextColor3 = Color3.fromRGB(193, 0, 0)
+Count.TextScaled = true
+Count.TextSize = 14.000
+Count.TextWrapped = true
+
+BackArrow.Name = "BackArrow"
+BackArrow.Parent = Frame
+BackArrow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BackArrow.BorderSizePixel = 0
+BackArrow.Position = UDim2.new(-0.0088, 0, -0.194444448, 0)
+BackArrow.Size = UDim2.new(0.194357365, 0, 1.38888884, 0)
+BackArrow.Font = Enum.Font.SourceSans
+BackArrow.Text = "<"
+BackArrow.TextColor3 = Color3.fromRGB(0, 0, 0)
+BackArrow.TextScaled = true
+BackArrow.TextSize = 14.000
+BackArrow.TextWrapped = true
+
+Arrow.Name = "Arrow"
+Arrow.Parent = Frame
+Arrow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Arrow.BorderSizePixel = 0
+Arrow.Position = UDim2.new(0.810832322, 0, -0.194444448, 0)
+Arrow.Size = UDim2.new(0.210031345, 0, 1.38888884, 0)
+Arrow.Font = Enum.Font.SourceSans
+Arrow.Text = ">"
+Arrow.TextColor3 = Color3.fromRGB(0, 0, 0)
+Arrow.TextScaled = true
+Arrow.TextSize = 14.000
+Arrow.TextWrapped = true
+
+Distance.Name = "Distance"
+Distance.Parent = Frame
+Distance.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Distance.BackgroundTransparency = 1.000
+Distance.BorderSizePixel = 0
+Distance.Position = UDim2.new(-0.0367473736, 0, 1.65188479, 0)
+Distance.Size = UDim2.new(0.398119122, 0, 1.49339807, 0)
+Distance.Font = Enum.Font.SourceSans
+Distance.Text = "9999"
+Distance.TextColor3 = Color3.fromRGB(30, 223, 244)
+Distance.TextScaled = true
+Distance.TextSize = 14.000
+Distance.TextWrapped = true
+Distance.TextXAlignment = Enum.TextXAlignment.Left
+
+Rarity.Name = "Rarity"
+Rarity.Parent = Frame
+Rarity.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Rarity.BackgroundTransparency = 1.000
+Rarity.BorderSizePixel = 0
+Rarity.Position = UDim2.new(-0.0367473662, 0, 3.11501384, 0)
+Rarity.Size = UDim2.new(0.398119122, 0, 1.49339807, 0)
+Rarity.Font = Enum.Font.SourceSans
+Rarity.Text = "Rarity"
+Rarity.TextColor3 = Color3.fromRGB(30, 223, 244)
+Rarity.TextScaled = true
+Rarity.TextSize = 14.000
+Rarity.TextWrapped = true
+Rarity.TextXAlignment = Enum.TextXAlignment.Left
+
+UIStroke.Thickness = 14.7
+UIStroke.Parent = Frame
+
+function Rainbow(Color)
+	while true do 
+		i = 0
+		for n=1,0,-0.05 do 
+			i = i + 0.05
+			Color.BackgroundColor3 = Color3.new(i, 0, n)
+			wait(.1) 
+		end
+		i = 0
+		for n=1,0,-0.05 do 
+			i = i + 0.05
+			Color.BackgroundColor3 = Color3.new(n, i, 0)
+			wait(.1)
+		end
+		i = 0
+		for n=1,0,-0.05 do 
+			i = i + 0.05
+			Color.BackgroundColor3 = Color3.new(0, n, i)
+			wait(.1) 
+		end 
+	end
+end
+
+
+BagFolder.ChildAdded:Connect(function(Bag)
+	if Bag:WaitForChild("BillboardGui"):WaitForChild("Rainbow").Value == true then
+		Rainbow(Bag.BillboardGui.Frame)
+	end
+end)
+
+local Bags ={
+	["Common"] = 1,
+	["Uncommon"] = 2,
+	["Rare"] = 3,
+	["Epic"] = 4,
+	["Legendary"] = 5,
+}
+
+local RunService = game:GetService("RunService")
+local TeleportService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+
+local Player = Players.LocalPlayer
+
+local N = 0
+
+for _,v in pairs(workspace:GetDescendants()) do
+	if v.Name == "Rarity" then
+		N+=1
+		v.Parent.Name = v.Value.."Bag"
+
+		local BClone = BillboardGui:Clone()
+
+
+		if v.Value == "Resplendent" then
+			BClone.Enabled = true
+			BClone.Parent = v.Parent
+			BClone.Adornee = v.Parent
+			BClone.Countofnumbers.Value = N
+
+			warn(tostring(v.Value).." Bag Was Found !")
+			BClone.Frame.UIStroke.Enabled = true
+			BClone.Rainbow.Value = true
+
+			v.Parent.Parent = BagFolder
+		elseif v.Value == "Ultimate" then
+			BClone.Enabled = true
+			BClone.Parent = v.Parent
+			BClone.Adornee = v.Parent
+			BClone.Countofnumbers.Value = N
+
+			warn(tostring(v.Value).." Bag Was Found !")
+			BClone.Frame.UIStroke.Enabled = true
+
+			BClone.Frame.BackgroundColor3 = Color3.new(0.788235, 0.0196078, 1)
+		elseif v.Value == "Legendary" then
+			BClone.Enabled = true
+			BClone.Parent = v.Parent
+			BClone.Adornee = v.Parent
+			BClone.Countofnumbers.Value = N
+
+			warn(tostring(v.Value).." Bag Was Found !")
+			BClone.Frame.UIStroke.Enabled = true
+
+			BClone.Frame.BackgroundColor3 = v.Parent.Main.Color
+		else
+			BClone.Enabled = true
+			BClone.Parent = v.Parent
+			BClone.Adornee = v.Parent
+			BClone.Countofnumbers.Value = N
+			BClone.Frame.BackgroundColor3 = v.Parent.Main.Color
+		end
+
+
+		v.Parent.Parent = BagFolder
+	end
+end
+
+local Current = BagFolder:GetChildren()[math.random(1,#BagFolder:GetChildren())]:WaitForChild("Main")
+
+local CurrentSeleceted = 0
+Selection.Parent = Player.PlayerGui
+
+Selection.Frame.BackArrow.MouseButton1Click:Connect(function()
+	if CurrentSeleceted > 0 and CurrentSeleceted <= N then
+		CurrentSeleceted-=1
+
+	elseif CurrentSeleceted == 0 then
+		CurrentSeleceted=N
+	end
+end)
+
+Selection.Frame.Arrow.MouseButton1Click:Connect(function()
+	if CurrentSeleceted >= 0 and CurrentSeleceted < N then 
+		CurrentSeleceted+=1 
+
+	elseif CurrentSeleceted == N then
+		CurrentSeleceted=0
+
+	end
+end)
+
+BagFolder.ChildRemoved:Connect(function(Bag)
+	if Current == Bag.Main then Current = BagFolder:GetChildren()[math.random(1,#BagFolder:GetChildren())]:WaitForChild("Main") end
+end)
+
+RunService.RenderStepped:Connect(function()
+	wait(.1)
+	N = #BagFolder:GetChildren()
+	Selection.Frame.Count.Text = ((CurrentSeleceted > 0 and tostring(CurrentSeleceted)) or "All" )
+	if CurrentSeleceted <= 0 then
+		for _,v in pairs(BagFolder:GetChildren()) do
+			v.BillboardGui.Enabled = true
+			if (Player.Character.HumanoidRootPart.Position - v.Main.Position).Magnitude < (Player.Character.HumanoidRootPart.Position - Current.Position).Magnitude or Current == nil then
+				Current = v.Main
+			end
+			if v.Main == Current then
+				v.BillboardGui.Frame.UIStroke.Color = Color3.new(255, 255, 255)
+				v.BillboardGui.Frame.UIStroke.Thickness = 7.7
+			elseif v.Rarity.Value == "Ultimate" or v.Rarity.Value == "Resplendent" then
+				v.BillboardGui.Frame.UIStroke.Color = Color3.new(0,0,0)
+				v.BillboardGui.Frame.UIStroke.Thickness = 6.6
+			else
+				v.BillboardGui.Frame.UIStroke.Enabled = false
+			end
+		end
+	else
+		for _,v in pairs(BagFolder:GetChildren()) do
+			if v.BillboardGui.Countofnumbers.Value == CurrentSeleceted then
+				v.BillboardGui.Enabled = true
+
+				v.BillboardGui.Frame.UIStroke.Color = Color3.new(255, 255, 255)
+				v.BillboardGui.Frame.UIStroke.Thickness = 7.7
+
+				Current = v.Main
+
+			else
+				v.BillboardGui.Enabled = false
+			end
+
+		end
+	end
+	if Current ~= nil then	
+		Current.Parent.BillboardGui.Frame.UIStroke.Enabled = true
+		Rarity.Text = Current.Parent.Rarity.Value
+		Rarity.TextColor3 = Current.Color
+		Distance.Text = tostring(tostring(math.floor((Player.Character.HumanoidRootPart.Position - Current.Position).Magnitude))).."m"
+	end
+end)
